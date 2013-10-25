@@ -18,3 +18,8 @@ meter - meter class holds meter info and creates and attaches messages to the me
 logging - logs data to a sqllite3 database. Use this to see how a message handleer is built and implementented.
 
 Only 2 messages are implemented in this VERY early alpha release.
+
+usage: python logger.py
+
+It will create a db in ./db and log data to it. Control-c kills it.
+Assumes your raven USB device is at /dev/ttyUSB0. If it's not - then, well, change it!
