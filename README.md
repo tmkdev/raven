@@ -17,7 +17,7 @@ raven - handles communications with the raven USB device.
 meter - meter class holds meter info and creates and attaches messages to the meter recieved from the raven class.
 logging - logs data to a sqllite3 database. Use this to see how a message handleer is built and implementented.
 
-Only 2 messages are implemented in this VERY early alpha release.
+Only 2 messages are implemented in this VERY early alpha release. (InstantaneousDemand and CurrentSummationDelivered)
 
 usage: python logger.py
 
