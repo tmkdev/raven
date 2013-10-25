@@ -1,10 +1,11 @@
 #!/usr/bin/python
 import sqlite3
 import raven
-
+import os
 
 def defaultHandler(thismessage, type, meter):
     if hasattr(meter, 'meterId'):
+
         conn = sqlite3.connect('db/meters.db')
         c = conn.cursor()
 
@@ -21,6 +22,9 @@ def defaultHandler(thismessage, type, meter):
 
 
 def createDb():
+    if not os.path.exists('./db'):
+        os.makedirs('./db')
+
     conn = sqlite3.connect('db/meters.db')
     c = conn.cursor()
 
@@ -31,7 +35,6 @@ def createDb():
         """create table if not exists summationdelivered ( metermacid int, date int, summationdelivered numeric, tstamp CURRENT_TIME DEFAULT CURRENT_TIMESTAMP)""")
 
     conn.commit()
-
     conn.close()
 
 
