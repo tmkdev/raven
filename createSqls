@@ -1,0 +1,8 @@
+create table if not exists meters ( metermacid int, metername text, primary key (metermacid) );
+
+create table if not exists instantaneousdemand ( metermacid int, date int, demand numeric, tstamp CURRENT_TIME );
+
+create table if not exists summationdelivered ( metermacid int, date int, summationdelivered numeric, tstamp CURRENT_TIME );
+
+insert into instantaneousdemand (metermacid, date, demand) values ( ? , ? , ? )
+insert into summationdelivered (metermacid, date, summationdelivered) values ( ? , ? , ? )
